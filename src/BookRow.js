@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BookRow(props) {
   const book = props.book;
@@ -10,7 +11,9 @@ function BookRow(props) {
       <td>{book.title}</td>
       <td>{authors}</td>
       <td>
-        <button className="btn" style={{ backgroundColor: book.color }} />
+         <Link to={`/books/${book.color}`}>
+           <button className="btn" style={{ backgroundColor: book.color }} />
+        </Link>     
       </td>
     </tr>
   );
